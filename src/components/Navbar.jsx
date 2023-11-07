@@ -1,15 +1,16 @@
 import React from "react";
-import styles from "../styles/ItemCard.module.css";
+import styles from "../styles/Navbar.module.css";
 import { useValue } from "../itemContext";
 
 function Navbar() {
-  const { item, total, handleReset } = useValue();
+  const { item, total, clear } = useValue();
   return (
     <div className={styles.container}>
       <h1>Total : &#x20B9; {total}</h1>
       <h1>Items: {item}</h1>
-      <div >
-        <button className={styles.itemButton} onClick={() => handleReset()}>
+      <div className={styles.buttonsWrapper}>
+        <button className={styles.button}>Cart</button>
+        <button className={styles.button} onClick={clear}>
           Reset
         </button>
       </div>

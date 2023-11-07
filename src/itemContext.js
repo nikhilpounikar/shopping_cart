@@ -1,11 +1,11 @@
-import { useState, useContext, createContext } from "react";
-
-const useValue = () => {
-  const value = useContext(itemContext);
-  return value;
-};
+import { createContext, useState, useContext } from "react";
 
 const itemContext = createContext();
+
+function useValue() {
+  const value = useContext(itemContext);
+  return value;
+}
 
 function CustomItemContext({ children }) {
   const [total, setTotal] = useState(0);
@@ -24,28 +24,19 @@ function CustomItemContext({ children }) {
     setItem(item - 1);
   };
 
-  const handleReset = () => {
+  const clear = () => {
     setTotal(0);
     setItem(0);
   };
 
   return (
     <itemContext.Provider
-      value={{
-        total,
-        setTotal,
-        item,
-        setItem,
-        handleRemove,
-        handleAdd,
-        handleReset,
-      }}
+      value={{ total, item, handleAdd, handleRemove, clear }}
     >
       {children}
     </itemContext.Provider>
   );
 }
 
-export { itemContext, useValue };
-
+export { useValue };
 export default CustomItemContext;

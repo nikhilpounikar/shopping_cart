@@ -3,11 +3,11 @@ import styles from "../styles/ItemCard.module.css";
 import { useValue } from "../itemContext";
 
 function ItemCard({ name, price }) {
-  const { handleAdd,handleRemove} = useValue();
+  const { handleAdd, handleRemove } = useValue();
 
   // const handleAdd = () => {
   //   setTotal(total + price);
-  //   setItem(item+1);
+  //   setItem(item + 1);
   // };
 
   // const handleRemove = () => {
@@ -15,7 +15,7 @@ function ItemCard({ name, price }) {
   //     return;
   //   }
   //   setTotal((prevState) => prevState - price);
-  //   setItem(item-1)
+  //   setItem(item - 1);
   // };
 
   return (
@@ -26,7 +26,10 @@ function ItemCard({ name, price }) {
         <button className={styles.itemButton} onClick={() => handleAdd(price)}>
           Add
         </button>
-        <button className={styles.itemButton} onClick={() => handleRemove(price)}>
+        <button
+          className={styles.itemButton}
+          onClick={() => handleRemove(price)}
+        >
           Remove
         </button>
       </div>

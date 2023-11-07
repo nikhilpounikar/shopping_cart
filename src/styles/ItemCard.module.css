@@ -48,12 +48,3 @@
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
-
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 1rem;
-}

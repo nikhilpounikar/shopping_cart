@@ -4,15 +4,14 @@ import Navbar from "./components/Navbar";
 import CustomItemContext from "./itemContext";
 
 function App() {
-
   return (
     // providing multiple contexts
-    <CustomItemContext >
-        <div className="App">
-          <h2>Shopping Cart</h2>
-          <Navbar />
-          <Items />
-        </div>
+    <CustomItemContext>
+      <div className="App">
+        <h2>Shopping Cart</h2>
+        <Navbar />
+        <Items />
+      </div>
     </CustomItemContext>
   );
 }
