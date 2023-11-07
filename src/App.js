@@ -7,6 +7,7 @@ function App() {
   return (
     // providing multiple contexts
     <CustomItemContext>
+      
       <div className="App">
         <h2>Shopping Cart</h2>
         <Navbar />
