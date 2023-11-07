@@ -1,10 +1,9 @@
-import { useState,useContext,createContext } from "react";
+import { useState, useContext, createContext } from "react";
 
-const useValue = ()=>{
-
-    const value = useContext(itemContext);
-    return value;
-}
+const useValue = () => {
+  const value = useContext(itemContext);
+  return value;
+};
 
 const itemContext = createContext();
 
@@ -12,10 +11,9 @@ function CustomItemContext({ children }) {
   const [total, setTotal] = useState(0);
   const [item, setItem] = useState(0);
 
-
   const handleAdd = (price) => {
     setTotal(total + price);
-    setItem(item+1);
+    setItem(item + 1);
   };
 
   const handleRemove = (price) => {
@@ -23,16 +21,31 @@ function CustomItemContext({ children }) {
       return;
     }
     setTotal((prevState) => prevState - price);
-    setItem(item-1)
+    setItem(item - 1);
+  };
+
+  const handleReset = () => {
+    setTotal(0);
+    setItem(0);
   };
 
   return (
-    <itemContext.Provider value={{ total, setTotal, item, setItem,handleRemove,handleAdd }}>
+    <itemContext.Provider
+      value={{
+        total,
+        setTotal,
+        item,
+        setItem,
+        handleRemove,
+        handleAdd,
+        handleReset,
+      }}
+    >
       {children}
     </itemContext.Provider>
   );
 }
 
-export { itemContext,useValue };
+export { itemContext, useValue };
 
 export default CustomItemContext;
