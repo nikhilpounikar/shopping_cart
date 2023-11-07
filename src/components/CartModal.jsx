@@ -25,8 +25,8 @@ function CartModal() {
         }
       </div>
       <div className={styles.total}>
-        <div className={styles.totalText}>{total}</div>
-        <div className={styles.totalPrice}>$Price</div>
+        <div className={styles.totalText}>Total</div>
+        <div className={styles.totalPrice}>{total}</div>
       </div>
     </div>
   );
